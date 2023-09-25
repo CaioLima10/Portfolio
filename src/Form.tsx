@@ -89,8 +89,14 @@ export default function Form() {
                                 value={message}
                             />
                         </div>
-                        <Button className="w-full bg-sky-500 hover:bg-sky-400  text-background">
+                        <Button
+                            className={`px-4 py-2 w-full mb-5 rounded-md relative bg-secondary text-white overflow-hidden group`}
+                            variant="outline"
+                        >
+                        <span className="relative z-10">
                             { isLoading ?  <ReloadIcon className="mr-2 h-4 w-4 animate-spin" /> : <span>{t("toSend")}</span>  }
+                        </span>
+                            <div className="absolute inset-0 bg-background transform translate-y-full origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></div>
                         </Button>
                     </form>
                 </DropdownMenuContent>
