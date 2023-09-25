@@ -12,7 +12,7 @@ import { Progress } from "./components/ui/progress"
   export default function About() {
 
     return (
-        <div className="flex items-center justify-center  relative mb-20  bg-gradient-to-r from-black via-gray-900 to-black">
+        <div className="flex items-center justify-center  relative mb-20  bg-gradient-to-r from-black via-gray-900 to-black" id="about">
           <div className="flex w-full max-w-screen-xl">
           <div className="flex flex-col  items-center justify-center">
             <div className="flex w-full items-center">
@@ -31,13 +31,13 @@ import { Progress } from "./components/ui/progress"
                 <Dialog>
                   <DialogTrigger className=" w-80 flex items-center justify-center active:bg-slate-900 rounded-none shadow-lg shadow-slace-500/40 relative">
                   <Button
-                    className={`px-4 py-2 w-full rounded-md relative text-white overflow-hidden group`}
+                    className={`px-4 py-2 w-full rounded-md bg-secondary relative text-white overflow-hidden group`}
                     variant="outline"
                   >
                     <span className="relative z-10">
                       Explore minha cidade
                     </span>
-                    <div className="absolute inset-0 bg-slate-700 transform translate-y-full origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></div>
+                    <div className="absolute inset-0 bg-background transform translate-y-full origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></div>
                   </Button>
                   </DialogTrigger>
                       <img className="w-44 mt-2 mb-2 flex items-center justify-center  "src={MyCity} alt="Minha-Cidade" />
