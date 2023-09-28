@@ -96,7 +96,11 @@ export default function Form() {
                         <span className="relative z-10">
                             { isLoading ?  <ReloadIcon className="mr-2 h-4 w-4 animate-spin" /> : <span>{t("toSend")}</span>  }
                         </span>
-                            <div className="absolute inset-0 bg-background transform translate-y-full origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></div>
+                            <div 
+                                className={`absolute inset-0 bg-background transform translate-y-full 
+                                origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 
+                                group-hover:translate-y-0`}>
+                            </div>
                         </Button>
                     </form>
                 </DropdownMenuContent>
