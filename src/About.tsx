@@ -1,19 +1,20 @@
+  import './About.css';
   import { Separator } from "./components/ui/separator"
   import Astronauta from "./components/astronauta"
   import MyCity from "./assets/city.png"
   import { Dialog, DialogContent, DialogTrigger } from "./components/ui/dialog"
   import CityImageLink from "./components/cityImgLink"
   import Power from "./components/power"
-import Spaceable from "./components/spaceable"
-import { Button } from "./components/ui/button"
-import { Progress } from "./components/ui/progress"
+  import Spaceable from "./components/spaceable"
+  import { Button } from "./components/ui/button"
+  import { Progress } from "./components/ui/progress"
 
 
   export default function About() {
 
     return (
-        <div className="flex items-center justify-center  relative mb-20  bg-gradient-to-r from-black via-gray-900 to-black" id="about">
-          <div className="flex w-full max-w-screen-xl">
+        <div  className="flex md:flex-col items-center justify-center  relative mb-20  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
+          <div id="flex-row-responsive"className=" flex custom:flex-col  w-full max-w-screen-xl">
           <div className="flex flex-col  items-center justify-center">
             <div className="flex w-full items-center">
               <div className="flex w-full flex-col items-center">
