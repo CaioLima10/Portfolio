@@ -1,0 +1,20 @@
+@media (max-width: 1430px) {
+
+    #about{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #flex-row-responsive {
+        width: 90%;
+        
+    }
+}
+
+@media (max-width: 1130px) {
+    #flex-row-responsive {
+        flex-direction: column;
+
+    }
+}
