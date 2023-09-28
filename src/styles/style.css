@@ -1,0 +1,44 @@
+
+  @keyframes shrinkHeight {
+    0%, 100% {
+      height: 0;
+    }
+    50% {
+      height: 320px;
+    }
+  }
+
+  @keyframes BordershrinkHeight {
+    0%, 100% {
+      height: 0;
+    }
+    50% {
+      height: 320px;
+    }
+  }
+
+  #animate-shrinkHeight {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(10px);
+    width: 170px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    animation: shrinkHeight 30s ease-in-out infinite alternate;
+  }
+  
+  #border-animate-shrinkHeight{
+    position: absolute;
+    background: rgba(255, 255, 255, 0.02); 
+    backdrop-filter: blur(10px); 
+    width: 70px;
+    border-left: 2px solid rgba(255, 255, 255, 0.6);
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+
+    box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.5);
+    top: 0; 
+    left: 50%; 
+    transform: translate(-50%);
+    animation: BordershrinkHeight 30s ease-in-out infinite alternate; 
+}
