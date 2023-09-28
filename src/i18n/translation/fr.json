@@ -1,0 +1,20 @@
+    {
+        "translation": {
+            "slate": "Ardoise",
+            "dark": "Zinc Foncé",
+            "System": "Système",
+            "welcome": "Bienvenue sur mon portfolio!",
+            "presentation": "Bonjour, je m'appelle",
+            "about": "J'ai 25 ans et je suis passionné par le domaine informatique. Au début, j'ai rencontré beaucoup de difficultés dues à la météo et aux conditions, mais pour conquérir ce secteur, il a fallu persévérer et rester concentré. Alors sentez-vous comme si vous étiez dans un vaisseau spatial et explorez mon portfolio planétaire",
+            "curriculum": "Programme d'études",
+            "aboutBtn": "Á propos",
+            "project": "Projet",
+            "Knowledge": "Connaissance",
+            "hiring": "Engagez moi",
+            "name": "Nom",
+            "email": "E-mail",
+            "message": "Message",
+            "toSend": "Envoyer"
+        }
+
+    }

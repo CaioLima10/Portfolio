@@ -1,0 +1,20 @@
+{
+    "translation": {
+        "slate": "Ardósia",
+        "dark": "Zinco Escuro",
+        "system": "Sistema",
+        "welcome": "Seja bem-vindo ao meu Portfólio!",
+        "presentation": "olá, meu nome é",
+        "about": "Tenho 25 anos e sou apaixonado pela área de TI. No começo, enfrentei muitas dificuldades devido ao tempo e às condições, mas para conquistar essa área, foi necessário persistire manter o foco. Portanto, sinta como se estivesse em uma nave e explorar meu portfólio planetário.",
+        "curriculum": "Currículo",
+        "aboutBtn": "Sobre mim",
+        "project": "Projeto",
+        "Knowledge": "Conhecimento",
+        "hiring": "Me contrate!",
+        "name": "Nome",
+        "email": "E-mail",
+        "message": "Messagem",
+        "toSend": "Enviar"
+    }
+
+}

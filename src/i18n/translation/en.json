@@ -1,0 +1,19 @@
+{    
+    "translation": {
+        "slate": "Slate",
+        "dark": "Dark Zinc",
+        "system": "System",
+        "welcome": "Welcome to my Portfolio!",
+        "presentation": "Hello my name is",
+        "about": "I'm 25 years old and passionate about the IT area. In the beginning, I faced many difficulties due to the weather and conditions, but to conquer this area, it was necessary to persist and stay focused. So feel like you're in a spaceship and explore my planetary portfolio",
+        "curriculum": "Curriculum",
+        "aboutBtn": "About",
+        "project": "Project",
+        "Knowledge": "Knowledge",
+        "hiring": "hire me",
+        "name": "Name",
+        "email": "E-mail",
+        "message": "Message",
+        "toSend": "To send"
+    }
+}
