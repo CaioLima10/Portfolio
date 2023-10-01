@@ -1,4 +1,6 @@
-  import './About.css';
+  import "./About.css"
+  import Aos from "./hooks/aosConfig"
+
   import { Separator } from "./components/ui/separator"
   import Astronauta from "./components/astronauta"
   import MyCity from "./assets/city.png"
@@ -8,14 +10,18 @@
   import Spaceable from "./components/spaceable"
   import { Button } from "./components/ui/button"
   import { Progress } from "./components/ui/progress"
+  import { useEffect } from "react"
 
-
-  export default function About() {
+export default function About() {
+  
+  useEffect(() => {
+    Aos.refresh();
+  }, []);
 
     return (
         <div  className="flex md:flex-col items-center justify-center  relative mb-20  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
           <div id="flex-row-responsive"className=" flex custom:flex-col  w-full max-w-screen-xl">
-          <div className="flex flex-col  items-center justify-center">
+          <div  className="flex flex-col  items-center justify-center">
             <div className="flex w-full items-center">
               <div className="flex w-full flex-col items-center">
                   <small className="mb-2 flex items-end justify-end w-full ">INFORMAÇÃO - NAVES</small>
@@ -27,7 +33,7 @@
 
             <div className="flex w-80 mb-8 max-w-screen-xl">
             <div className="flex items-center">
-              <div className="flex flex-col items-center">
+              <div data-aos="fade-up" className="flex flex-col items-center">
                 <small className="mb-2 flex items-end justify-end w-full">BRASIL - SÃO-PAULO</small>
                 <Dialog>
                   <DialogTrigger className=" w-80 flex items-center justify-center active:bg-slate-900 rounded-none shadow-lg shadow-slace-500/40 relative">
@@ -66,7 +72,7 @@
               <div className="flex flex-col  gap-2">
                 <small >HABILIDADES - PESSOAIS</small>
                 <Separator className="w-full mb-2" />
-                <Power/>
+                <Power data-aos="fade-up" />
               </div>
             </div>
           </div>
