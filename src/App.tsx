@@ -9,6 +9,10 @@ import BackToTop from "./util";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Project from "./Project";
+import Comment from "./Comment";
+
+import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer } from "react-toastify";
 
 export function App() {
 
@@ -32,23 +36,20 @@ export function App() {
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <div className="dark:bg-white-200 mx-auto max-w-screen-xl  h-auto p-4 relative ">
           <Header />
-              <div className="flex items-center justify-center">
-                <div className="w-2 h-80 bg-secondary left-2 top-44 fixed">
-                <span className="absolute top-0 -mt-4 left-3 text-slate-200">0%</span>
-                <span className="absolute top-20 -mt-2 left-3 text-slate-200">25%</span>
-                <span className="absolute top-40 -mt-2 left-3 text-slate-200">50%</span>
-                <span className="absolute top-60 -mt-2 left-3 text-slate-200">75%</span>
-                <span className="absolute top-80 -mt-2 left-3 text-slate-200">100%</span>
-              <div  style={{ height:`${scrollTop}rem`, width: "4px" , }} className="z-50 bg-primary flex rounded-full "/>
+              <div className="flex items-center justify-center ">
+                <div className="h-2 w-160 bg-secondary bottom-2  fixed z-50">
+              <div  style={{ width:`${scrollTop}rem`, height: "4px", zIndex: "99"  }} className="z-50 bg-primary flex rounded-full "/>
             </div>
           </div>
           <Start />
           <MdKeyboardDoubleArrowDown  className=" w-full text-5xl mb-5" />
           <NavBar />
           <About />
-          <Project />
           <Skills />
+          <Comment/>
+          <Project />
           <Footer/>
+          <ToastContainer/>
           <BackToTop/>
         </div>
     </ThemeProvider>
