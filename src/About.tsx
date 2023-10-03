@@ -19,7 +19,7 @@ export default function About() {
   }, []);
 
     return (
-        <div  className="flex md:flex-col items-center justify-center  relative  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
+        <div  className="flex md:flex-col items-center justify-center  relative mt-16 md:mt-10  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
           <div id="flex-row-responsive"className=" flex custom:flex-col  w-full max-w-screen-xl">
           <div  className="flex flex-col  items-center justify-center">
             <div className="flex w-full items-center">
@@ -47,7 +47,7 @@ export default function About() {
                     <div className="absolute inset-0 bg-background transform translate-y-full origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></div>
                   </Button>
                   </DialogTrigger>
-                      <img className="w-44 mt-2 mb-2 flex items-center justify-center  "src={MyCity} alt="Minha-Cidade" />
+                      <img className="w-44 mt-2 mb-2 flex items-center justify-center"src={MyCity} alt="Minha-Cidade" />
                   <DialogContent>
                     <CityImageLink/>
                       <small>
