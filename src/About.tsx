@@ -22,19 +22,11 @@ export default function About() {
         <div  className="flex md:flex-col items-center justify-center  relative mt-16 md:mt-10  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
           <div id="flex-row-responsive"className=" flex custom:flex-col  w-full max-w-screen-xl">
           <div  className="flex flex-col  items-center justify-center">
-            <div className="flex w-full items-center">
-              <div className="flex w-full flex-col items-center">
-                  <small className="mb-2 flex items-end justify-end w-full ">INFORMAÇÃO - NAVES</small>
-                  <Separator className="w-full mb-4 flex items-end justify-end" />
-                  <Spaceable/>
-
-              </div>
-            </div>
-
             <div className="flex w-80 mb-8 max-w-screen-xl">
             <div className="flex items-center">
               <div data-aos="fade-up" className="flex flex-col items-center">
                 <small className="mb-2 flex items-end justify-end w-full">BRASIL - SÃO-PAULO</small>
+                    <Separator className="w-full mb-4 flex items-end justify-end" />
                 <Dialog>
                   <DialogTrigger className=" w-80 flex items-center justify-center active:bg-slate-900 rounded-none shadow-lg shadow-slace-500/40 relative">
                   <Button
@@ -48,13 +40,18 @@ export default function About() {
                   </Button>
                   </DialogTrigger>
                       <img className="w-44 mt-2 mb-2 flex items-center justify-center"src={MyCity} alt="Minha-Cidade" />
-                  <DialogContent>
+                  <DialogContent className="flex">
+
+                  <div>
                     <CityImageLink/>
-                      <small>
+                    <div className="border border-zinc-800 p-4 mt-5" >
+                      <small className="w-36">
                         Natural de Suzano, eu nasci em uma família de guerreiros, com meus pais e cinco irmãos. Hoje,
                         após muita perseverança e conquistas, 
                         nós estamos orgulhosamente residindo na mesma cidade de Ferraz de Vasconcelos há mais de 22 anos.
                       </small> 
+                    </div>
+                  </div>
                   </DialogContent>
                 </Dialog>
                 <div className="flex flex-col items-end justify-end w-full">
@@ -64,13 +61,20 @@ export default function About() {
               </div>
             </div>
           </div>
-          </div>
+            <div className="flex w-full items-center">
+              <div className="flex w-full flex-col items-center">
+                  <small className="mb-2 flex items-end justify-end w-full ">INFORMAÇÃO - NAVES</small>
+                  <Separator className="w-full mb-4 flex items-end justify-end" />
+                  <Spaceable/>
+              </div>
+            </div>
+        </div>
 
               <Astronauta />
 
             <div className="flex items-center justify-center">
               <div className="flex flex-col  gap-2">
-                <small >HABILIDADES - PESSOAIS</small>
+                <small >SONHO - CARREIRA</small>
                 <Separator className="w-full mb-2" />
                 <Power data-aos="fade-up" />
               </div>
