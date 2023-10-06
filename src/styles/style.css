@@ -42,3 +42,42 @@
     transform: translate(-50%);
     animation: BordershrinkHeight 30s ease-in-out infinite alternate; 
 }
+
+ .img-float{
+  animation: float 3s ease-in-out infinite;
+} 
+
+ @keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+ .circle{
+  animation: animate 40s linear infinite;
+ }
+
+ @keyframes animate {
+  0%{
+    transform: translate(-50%, -50%) rotate(0)
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+ }
+
+ .marte{
+  animation: animatePlanet 60s linear infinite;
+ }
+
+ @keyframes animatePlanet {
+  0%{
+    transform: translate(-50%, -50%) rotate(0)
+  }
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg)
+  }
+ }
