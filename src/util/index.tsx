@@ -35,9 +35,9 @@ export default function BackToTop() {
           onClick={() => {
             scrollToTop();
           }}
-          className="absolute right-10 bottom-14 z-10 text-5xl"
+          className="absolute right-2 md:right-10 bottom-14 z-10 text-5xl"
         > 
-            {nitro ? <div className="fixed right-20 bottom-20"><img className="bg-100-white w-36 " src={astronautR} alt="Foguete" /></div> :  <img className="bg-100-white w-28" src={astronautRocket} alt="Foguete" />} 
+            {nitro ? <div className="fixed right-2 md:right-20 bottom-20"><img className="bg-100-white w-36 " src={astronautR} alt="Foguete" /></div> :  <img className="bg-100-white w-28" src={astronautRocket} alt="Foguete" />} 
         </button>
       ) : null}
 
