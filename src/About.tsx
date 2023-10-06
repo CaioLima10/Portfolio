@@ -11,21 +11,34 @@
   import { Button } from "./components/ui/button"
   import { Progress } from "./components/ui/progress"
   import { useEffect } from "react"
+  import { useTranslation } from "react-i18next"
+  import { RxDoubleArrowDown } from "react-icons/rx";
+
 
 export default function About() {
+
+  const { t } = useTranslation()
   
   useEffect(() => {
     Aos.refresh();
   }, []);
 
     return (
-        <div  className="flex md:flex-col items-center justify-center  relative mt-16 md:mt-10  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
+      <>
+        <div
+          data-aos="fade-down"
+          data-aos-anchor-placement="center-bottom"
+          className="w-full flex items-center justify-center"
+        >
+          <RxDoubleArrowDown size={32} className="mt-36 sm:mt-36 lg:mt-64" />
+        </div>
+        <div  className="flex md:flex-col items-center justify-center  relative mt-16 md:mt-24  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
           <div id="flex-row-responsive"className=" flex custom:flex-col  w-full max-w-screen-xl">
           <div  className="flex flex-col  items-center justify-center">
             <div className="flex w-80 mb-8 max-w-screen-xl">
             <div className="flex items-center">
               <div data-aos="fade-up" className="flex flex-col items-center">
-                <small className="mb-2 flex items-end justify-end w-full">BRASIL - SÃO-PAULO</small>
+                <small className="mb-2 flex items-end justify-end w-full">{t("country-state")}</small>
                     <Separator className="w-full mb-4 flex items-end justify-end" />
                 <Dialog>
                   <DialogTrigger className=" w-80 flex items-center justify-center active:bg-slate-900 rounded-none shadow-lg shadow-slace-500/40 relative">
@@ -34,7 +47,7 @@ export default function About() {
                     variant="outline"
                   >
                     <span className="relative z-10">
-                      Explore minha cidade
+                      {t("btn-explore-city")}
                     </span>
                     <div className="absolute inset-0 bg-background transform translate-y-full origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></div>
                   </Button>
@@ -44,18 +57,16 @@ export default function About() {
 
                   <div>
                     <CityImageLink/>
-                    <div className="border border-zinc-800 p-4 mt-5" >
+                    <div className="border border-zinc-800 p-4 " >
                       <small className="w-36">
-                        Natural de Suzano, eu nasci em uma família de guerreiros, com meus pais e cinco irmãos. Hoje,
-                        após muita perseverança e conquistas, 
-                        nós estamos orgulhosamente residindo na mesma cidade de Ferraz de Vasconcelos há mais de 22 anos.
+                        {t("about-where-I-live")}
                       </small> 
                     </div>
                   </div>
                   </DialogContent>
                 </Dialog>
                 <div className="flex flex-col items-end justify-end w-full">
-                  <small>moro no estado de São Paulo - população IBGE 21.9%</small>
+                  <small>{t("info-city")}</small>
                   <Progress value={21}/>
                 </div>
               </div>
@@ -63,7 +74,7 @@ export default function About() {
           </div>
             <div className="flex w-full items-center">
               <div className="flex w-full flex-col items-center">
-                  <small className="mb-2 flex items-end justify-end w-full ">INFORMAÇÃO - NAVES</small>
+                  <small className="mb-2 flex items-end justify-end w-full ">{t("information-ships")}</small>
                   <Separator className="w-full mb-4 flex items-end justify-end" />
                   <Spaceable/>
               </div>
@@ -74,12 +85,13 @@ export default function About() {
 
             <div className="flex items-center justify-center">
               <div className="flex flex-col  gap-2">
-                <small >SONHO - CARREIRA</small>
+                <small >{t("dream-career")}</small>
                 <Separator className="w-full mb-2" />
                 <Power data-aos="fade-up" />
               </div>
             </div>
           </div>
         </div>
+      </>
     )
   }
