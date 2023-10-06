@@ -130,7 +130,6 @@ useEffect(() => {
                 className="ml-2 mr-10"
               />
             </div>
-            {/*<GiJupiter title="jupiter" className="text-7xl z-50" />*/}
       </div>
 
       <div className="flex flex-col bg-slate-400/5 w-full items-center mb-28" id="comment">
