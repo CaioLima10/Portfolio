@@ -1,67 +1,45 @@
-import { FiArrowUpRight } from "react-icons/fi";
-import GifProjectOne from "./video/project01.gif";
-import {
-  IoLogoCss3,
-  IoLogoHtml5,
-  IoLogoJavascript,
-  IoLogoReact,
-} from "react-icons/io5";
-import { SiStyledcomponents } from "react-icons/si";
+import { Tabs, TabsList, TabsTrigger } from './components/ui/tabs'
+import FirstProject from './projects/fisrtProject'
+import SecondProject from './projects/secondProject'
+import ThirdProject from './projects/thirdProject'
+import {RxDoubleArrowDown} from "react-icons/rx"
+import Aos from "./hooks/aosConfig"
+import { useEffect } from 'react'
+import PlusProjects from './projects/plusProjects'
+import { useTranslation } from 'react-i18next'
 
 export default function Project() {
+
+  const { t } = useTranslation()
+
+  useEffect(() => {
+    Aos.refresh();
+  }, []);
+
   return (
-    <div className="flex flex-col w-full items-start justify-start">
-      <div
-        id="card-one"
-        className=" sm:min-w-44 sm:min-h-96 mb-4 sm:mb-44 border border-zinc-100 bg-space flex items-center p-4 relative"
-      >
-        <div className="text-5xl text-space mr-4">
-          <span className="border-2 border-space rounded-full w-24 h-24 flex items-center justify-center relative">
-            <span className="text-4xl text-space relative z-10">01</span>
-          </span>
-        </div>
-        <div>
-          <h1 className="text-3xl mb-2 sm:mb-10 font-bold text-white">
-            SIGMA BANK - app banco
-          </h1>
-          <img
-            className="mb-2 sm:mb-10 w-full sm:w-72 h-36 border border-zinc-500"
-            src={GifProjectOne}
-            alt=""
-          />
-          <h2 className="text-xl">Ferramentas</h2>
-          <div className="flex gap-2 sm:gap-4 text-3xl mb-2 sm:mb-5">
-            <IoLogoJavascript />
-            <IoLogoHtml5 />
-            <IoLogoReact />
-            <IoLogoCss3 />
-            <SiStyledcomponents />
-          </div>
-          <p className="text-sm w-full sm:w-72 text-white">
-            Projeto de banco que permite aos usuários criar seu próprio cartão,
-            passando por verificações de validação. O número do cartão é gerado
-            automaticamente. Os usuários podem deletar ou bloquear o cartão,
-            enviar Pix, depositar dinheiro na conta Poupa Herói e, como
-            resultado, ganhar prêmios.
-          </p>
-          <div>
-          </div>
-          <button
-            className="flex items-center justify-between w-full gap-2 bg-space text-white px-4 py-2 border border-white rounded-md mt-2 sm:mt-4 hover:bg-space-dark transition duration-300"
-          >
-            Código do Projeto
-            <FiArrowUpRight />
-          </button>
-          <button
-            className="flex items-center justify-between w-full gap-2 bg-space text-white px-4 py-2 border border-white rounded-md mt-2 sm:mt-4 hover:bg-space-dark transition duration-300"
-          >
-            Ver vídeo completo do projeto
-            <FiArrowUpRight />
-          </button>
+    <>
+      <div data-aos="fade-down"  data-aos-anchor-placement="center-bottom" className='w-full flex items-center justify-center  mb-28'>
+          <RxDoubleArrowDown 
+            size={32}/>
+      </div>
+      <div className="bg-gradient-to-r from-black via-gray-900 to-black">
+        <div className="h-3/4"> 
+        <h1 className='w-full flex items-center justify-center text-5xl p-4'  id="project">{t("missions")}</h1>
+
+          <Tabs defaultValue="firstProject" className="w-full p-16 mb-28  flex items-center justify-center flex-col">
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="firstProject">{t("title-project")} 1</TabsTrigger>
+              <TabsTrigger value="secondProject">{t("title-project")} 2</TabsTrigger>
+              <TabsTrigger value="thirdProject">{t("title-project")} 3</TabsTrigger>
+              <TabsTrigger value="plusProjects">+ {t("title-project")}</TabsTrigger>
+            </TabsList>
+            <FirstProject  value="firstProject"/>
+            <SecondProject value="secondProject"/>
+            <ThirdProject value="thirdProject" />
+            <PlusProjects value="plusProjects"/>
+          </Tabs>
         </div>
       </div>
-
-      {/* Outros cards aqui */}
-    </div>
-  );
+    </>
+  )
 }
