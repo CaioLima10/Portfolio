@@ -6,7 +6,6 @@ import About from "./About";
 import Skills from "./Skills";
 import Footer from "./Footer";
 import BackToTop from "./util";
-import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Project from "./Project";
 import Comment from "./Comment";
@@ -42,12 +41,11 @@ export function App() {
             </div>
           </div>
           <Start />
-          <MdKeyboardDoubleArrowDown  className=" w-full text-5xl mb-5" />
           <NavBar />
           <About />
           <Skills />
-          <Comment/>
           <Project />
+          <Comment/>
           <Footer/>
           <ToastContainer/>
           <BackToTop/>
