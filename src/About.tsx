@@ -28,15 +28,16 @@ export default function About() {
         <div
           data-aos="fade-down"
           data-aos-anchor-placement="center-bottom"
-          className="w-full flex items-center justify-center"
+          className="w-full flex items-center justify-center relative"
         >
-          <RxDoubleArrowDown size={32} className="mt-36 sm:mt-36 lg:mt-64" />
+          <RxDoubleArrowDown size={32} className="absolute top-44 md:top-44 lg:top-56 z-10" />
         </div>
-        <div  className="flex md:flex-col items-center justify-center  relative mt-16 md:mt-24  bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
+        <div  className="flex md:flex-col items-center justify-center  relative mt-56 md:mt-56 lg:mt-64 bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
           <div id="flex-row-responsive"className=" flex custom:flex-col  w-full max-w-screen-xl">
-          <div  className="flex flex-col  items-center justify-center">
+                  <h1 className=" md:left-0 md:absolute bottom-[23.2rem] flex items-center justify-center text-5xl text-center w-full h-full p-4">{t("exploration-about-me")}</h1>
+          <div  className="flex flex-col items-center justify-center">
             <div className="flex w-80 mb-8 max-w-screen-xl">
-            <div className="flex items-center">
+            <div className="flex flex-col items-center">
               <div data-aos="fade-up" className="flex flex-col items-center">
                 <small className="mb-2 flex items-end justify-end w-full">{t("country-state")}</small>
                     <Separator className="w-full mb-4 flex items-end justify-end" />
