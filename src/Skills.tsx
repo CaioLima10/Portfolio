@@ -25,7 +25,7 @@ import imgSqlite from "./assets/SQLite3.png";
 export default function AttributesSkills() {
   const [astronautOver, setAstronautOver] = useState(true);
 
-  const isMobile = window.innerWidth < 768; 
+  const isMobile = window.innerWidth < 1128; 
 
   const { t } = useTranslation()
   
@@ -53,34 +53,32 @@ export default function AttributesSkills() {
             className="ml-2 mr-10"
           />
         </div>
-        {/*<SiSaturn title="saturno" className=" text-7xl z-50" />*/}
       </div>
 
       <div className="w-full bg-slate-400/5 flex flex-col items-center justify-center" id="skills">
-        <div className="w-full bg-slate-400/5">
-          <h1 className="text-5xl text-center mt-3">{t("title-skills")}</h1>
-          <span className="flex items-end justify-end">{t("info-img-click")}</span>
-          <Separator className="flex items-center justify-center" />
-        </div>
+  <div className="w-full bg-slate-400/5">
+    <h1 className="text-5xl text-center mt-3">{t("title-skills")}</h1>
+    <span className="flex items-end justify-end">{t("info-img-click")}</span>
+    <Separator className="flex items-center justify-center" />
+  </div>
 
-        <div className={`w-full ${isMobile ? 'flex-col' : 'md:flex'} bg-primary/5 p-4`}>
-          <div className="w-full md:w-1/2 p-2 bg-black flex items-center justify-center">
-            <TiArrowRepeat className="text-3xl" />
+  <div className={`w-full ${isMobile ? 'flex-col' : 'md:flex'} bg-primary/5 p-4`}>
+    <div className="w-full md:w-1/2 p-2 bg-black flex items-center justify-center">
+      <TiArrowRepeat className="text-3xl" />
 
-            {astronautOver ? (
-              <img onClick={toggleAstronautImage} className="w-96 z-20" src={AstronautFocused} alt="" />
-            ) : (
-              <img onClick={toggleAstronautImage} className="w-96 z-20" src={AstronautFocus} alt="" />
-            )}
-          </div>
-          <div id="skills-responsive" className="w-full grid grid-cols-4 justify-center">
-            {/* Your content goes here */}
+      {astronautOver ? (
+        <img onClick={toggleAstronautImage} className="w-full md:w-full max-w-xl z-20" src={AstronautFocused} alt="" />
+      ) : (
+        <img onClick={toggleAstronautImage} className="w-full md:w-full  max-w-xl z-20" src={AstronautFocus} alt="" />
+      )}
+    </div>
+    <div id="skills-responsive" className={`w-full ${isMobile ? 'grid grid-cols-2' : 'grid grid-cols-4'} gap-4 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-4  items-center justify-center`}>
             <Dialog>
               <DialogTrigger
-                data-aos="fade-up" data-aos-duration="500"
+                data-aos="fade-up"
                 className=" w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative"
               >
-                <label className="flex w-full h-5  top-0 bg-amber-400 items-center justify-center text-base text-black">
+                <label className="flex w-full h-5 absolute  top-0 bg-amber-400 items-center justify-center text-base text-black">
                   JAVASCRIPT
                 </label>
                 <TbBrandJavascript className="w-full items-center text-8xl " />
@@ -94,14 +92,14 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-yellow-300">2 {t("years")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-yellow-300 w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4  border-yellow-300 w-full h-0  absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
             <Dialog>
               <DialogTrigger
                   data-aos="fade-up" data-aos-duration="700" 
                   className="w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative">
-                <label className="flex w-full h-5 top-0 bg-orange-400 items-center justify-center text-base text-black">
+                <label className="flex w-full h-5 absolute top-0 bg-orange-400 items-center justify-center text-base text-black">
                   HTML 5
                 </label>
                 <TbBrandHtml5 className="w-full items-center text-8xl " />
@@ -115,14 +113,14 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-orange-400">2 {t("years")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-orange-400 w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4 border-orange-400 w-full h-0  absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
             <Dialog>
               <DialogTrigger
                 data-aos="fade-up" data-aos-duration="900" 
                 className="w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative">
-                <label className="flex w-full h-5 top-0 bg-blue-500 items-center justify-center text-base text-black">
+                <label className="flex w-full h-5 absolute top-0 bg-blue-500 items-center justify-center text-base text-black">
                   CSS 3
                 </label>
                 <SiCss3 className="w-full items-center text-7xl " />
@@ -136,14 +134,14 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-blue-500">2 {t("years")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-blue-500 w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4 border-blue-500 w-full h-0   absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
             <Dialog>
               <DialogTrigger
                 data-aos="fade-up" data-aos-duration="1100" 
                 className="w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative">
-                <label className="flex w-full h-5 top-0 bg-blue-600 items-center justify-center text-base text-black">
+                <label className="flex w-full h-5 absolute top-0 bg-blue-600 items-center justify-center text-base text-black">
                   TYPESCRIPT
                 </label>
                 <TbBrandTypescript className="w-full items-center text-8xl " />
@@ -157,14 +155,14 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-blue-600">10 {t("month")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-blue-600 w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4 border-blue-600 w-full h-0  absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
             <Dialog>
               <DialogTrigger
                 data-aos="fade-up" data-aos-duration="1300" 
                 className="w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative">
-                <label className="flex w-full h-5 top-0 bg-green-400 items-center justify-center text-base text-black">
+                <label className="flex w-full h-5 absolute top-0 bg-green-400 items-center justify-center text-base text-black">
                   NODE
                 </label>
                 <TbBrandNodejs className="w-full items-center text-8xl " />
@@ -178,14 +176,14 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-green-400">1 {t("year")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-green-400 w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4 border-green-400 w-full h-0  absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
             <Dialog>
               <DialogTrigger 
                 data-aos="fade-up" data-aos-duration="1500"
                 className="w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative">
-                <label className="flex w-full h-5 top-0 bg-blue-400 items-center justify-center text-base text-black">
+                <label className="flex w-full h-5 absolute top-0 bg-blue-400 items-center justify-center text-base text-black">
                   REACT
                 </label>
                 <LiaReact className="w-full items-center text-8xl " />
@@ -199,14 +197,14 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-blue-400">1 {t("year")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-blue-400 w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4 border-blue-400 w-full h-0  absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
             <Dialog>
               <DialogTrigger 
                 data-aos="fade-up" data-aos-duration="1700"
                 className="w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative">
-                <label className="flex w-full h-5 top-0 bg-white items-center justify-center text-base text-black">
+                <label className="flex w-full h-5 absolute top-0 bg-white items-center justify-center text-base text-black">
                   NEXT
                 </label>
                 <SiNextdotjs className="w-full items-center text-7xl " />
@@ -220,14 +218,14 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-white">6 {t("months")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-white w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4 border-white w-full h-0  absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
             <Dialog>
               <DialogTrigger 
                 data-aos="fade-up" data-aos-duration="1900"
                 className="w-40 md:w-36 lg:w-36 xl:w-40 h-40 bg-slate-100/5 active:bg-background/40 shadow-lg shadow-slace-500/40 relative">
-                <label className="flex w-full h-5 top-0 bg-blue-900 items-center justify-center text-base ">SQLite3</label>
+                <label className="flex w-full h-5 absolute top-0 bg-blue-900 items-center justify-center text-base ">SQLite3</label>
                 <SiSqlite className="w-full items-center text-7xl " />
               </DialogTrigger>
               <DialogContent>
@@ -239,7 +237,7 @@ export default function AttributesSkills() {
                     <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-blue-900">1 {t("year")}</span> </h3>
                   </div>
                 </div>
-                <label className="border-4 border-blue-900 w-full h-0 bottom-0 left-0"></label>
+                <label className="border-4 border-blue-900 w-full h-0  absolute bottom-0 left-0"></label>
               </DialogContent>
             </Dialog>
           </div>
