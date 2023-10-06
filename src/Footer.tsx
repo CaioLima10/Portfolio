@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <div id="flex-col" className="flex w-full min-h-full flex-col items-center justify-center relative  bg-gradient-to-r from-black via-gray-900 to-black">
       <Separator />
-      <div  className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-5">
+      <div  className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 mt-5">
         <div className="flex flex-col items-center mb-4">
           <h2 className="text-2xl mb-2">Contato</h2>
           <Separator className="w-12 h-2 rounded-md mb-2" />
