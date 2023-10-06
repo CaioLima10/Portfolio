@@ -19,14 +19,16 @@ import ptBR from "../assets/prBR.webp"
 import { Button } from "./ui/button";
 import { ChevronDown, Infinity, RefreshCcw } from "lucide-react";
 import { Separator } from "./ui/separator";
+import { useTranslation } from "react-i18next";
 
 export default function Astronauta() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showAstronaut, setShowAstronaut] = useState(true);
  
-
   const astronautImages = [AstronautaImg, AstrountLeft, AstronautBottom, AstronatBottomRight, AstronautRight];
   const characterImages = [PersonagemFeminina, PersonagemFeminina1, PersonagemFeminina2];
+
+  const { t } = useTranslation();
 
   const imageStyleForPersonagemFeminina1 = {
     width: "120px",
@@ -58,7 +60,6 @@ export default function Astronauta() {
   return (
     <>
         <div className="mb-24  w-full flex flex-col items-center justify-center relative">
-        <h1 className=" flex items-center justify-center text-5xl text-center w-full h-full ">Habilidades Conquistadas</h1>
           <img style={{ zIndex: "30" }}  className="absolute" src={ vitrinePersonagem } alt="" />
           <div id="animate-shrinkHeight">
             <div id="border-animate-shrinkHeight"></div>
@@ -66,16 +67,16 @@ export default function Astronauta() {
 
           <div className="absolute top-88 ">
             <div className="flex items-center">
-              <small className="flex w-30">{ showAstronaut && <small>LEVEL: 26</small> || <small><Infinity /></small> }</small>
+              <small className="flex w-30">{ showAstronaut && <small>{t("level")}: 26</small> || <small><Infinity /></small> }</small>
               <Separator className="w-60 z-0" />
               <div className="flex flex-col relative">
-                <small className="flex">ORIGEM:</small>
+                <small className="flex">{t("origin")}:</small>
                 { showAstronaut && (
-                  <img className="w-14 absolute top-5 right-0" src={ptBR} alt="" />
+                  <img className="w-14 flex items-center justify-center" src={ptBR} alt="" />
                 ) ||(
                   <>
-                    <img  className="w-14 absolute top-5 right-0" src={OrigemCyberTron} alt="Cybertron" />
-                    <span className="w-14 text-base text-zinc-500 absolute top-20 right-0" >Cybertron</span>
+                    <img  className="w-12 flex items-center justify-center" src={OrigemCyberTron} alt="Cybertron" />
+                    <span className="w-12 text-base text-zinc-500  flex items-center justify-center mt-2" >Cybertron</span>
                   </>
                 ) }
               </div>
@@ -84,7 +85,7 @@ export default function Astronauta() {
       <div className="cursor-pointer ">
           <div
             onClick={handleNextImage}
-            className="w-96 h-88 p-12 z-30 transform flex justify-center items-center rotate-0 border-0.3px border-white-28  shadow-10 hover:shadow-20 relative transition-all duration-300"
+            className="w-full md:max-w-screen h-88 p-12 z-30 transform flex justify-center items-center rotate-0 border-0.3px border-white-28  shadow-10 hover:shadow-20 relative transition-all duration-300"
             >
               
           {showAstronaut ? (
@@ -96,7 +97,7 @@ export default function Astronauta() {
               <img
                 src={astronautImages[currentImageIndex]}
                 alt="nave"
-                className={`flex items-center justify-center w-96 max-h-full mt-44 mb-20 shadow-2xl`}
+                className={`flex items-center justify-center w-full md:max-w-screen  max-h-full mt-44 mb-20 shadow-2xl`}
                 id="img-astronaut"
               />
 
@@ -117,7 +118,7 @@ export default function Astronauta() {
         </div>
       </div>
         <ChevronDown />
-        <span className="mb-5">selecione se Personagem</span>
+        <span className="mb-5">{t("character")}</span>
       <div className="flex gap-2 relative">
         <Button className="h-16 w-28 bg-background border-2" onClick={handleClickFamely} >
           <img className="absolute w-24 h-24 bottom-0 " src={FemininaPerfil} alt="" />
