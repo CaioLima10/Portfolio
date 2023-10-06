@@ -1,11 +1,9 @@
-
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { Label } from "./components/ui/label";
 import { Textarea } from "./components/ui/textarea";
 import { useEffect, useState } from "react";
-
-import emailjs from "@emailjs/browser"
+import emailjs from "@emailjs/browser";
 import { ReloadIcon } from "@radix-ui/react-icons";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
@@ -16,103 +14,97 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { BsThreeDots } from "react-icons/bs";
 import { Trash2 } from "lucide-react";
 import { ScrollArea } from "./components/ui/scroll-area";
-import astronautFullPlanet from "./assets/imagem-astronauta-cheio-de-planetas.png"
+import astronautFullPlanet from "./assets/imagem-astronauta-cheio-de-planetas.png";
 
 export default function Form() {
+    const { t } = useTranslation();
 
-    const { t } = useTranslation()
-
-    const [ name , setName ] = useState<string>("")
-    const [ message , setMessage ] = useState<string>("")
-    const [ newDate , _setNewDate ] = useState("")
-    const [ deleteComment , setDeleteComment ] = useState <number | null>(null)
-    const [comment, setComment] = useState<string[] | number> ([]);
+    const [name, setName] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
+    const [deleteComment, setDeleteComment] = useState<number | null>(null);
+    const [comment, setComment] = useState<string[] | number>([]);
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-useEffect(() => {
-  const savedComments = localStorage.getItem("comments");
-  if (savedComments) {
-    const parsedComments = JSON.parse(savedComments);
-    setComment(parsedComments);
+    useEffect(() => {
+        const savedComments = localStorage.getItem("comments");
+        if (savedComments) {
+            const parsedComments = JSON.parse(savedComments);
+            setComment(parsedComments);
+        }
+    }, []);
 
-    
-  }
-}, []);
-
-
-    function sendForm(event: React.FormEvent){
-        event.preventDefault()
-        if(!name  || !message){
-            alert("Prencha todos os campos");
-            return
+    function sendForm(event: React.FormEvent) {
+        event.preventDefault();
+        if (!name || !message) {
+            alert("Preencha todos os campos");
+            return;
         }
         setIsLoading(true);
 
-        const date = new Date()
+        const date = new Date();
 
-        const currentDateTime = date.toLocaleDateString("pt-BR",{
-          year: "numeric",
-          month: "2-digit",
-          day: "2-digit"
-        })
+        const currentDateTime = date.toLocaleDateString("pt-BR", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+        });
 
-        const newComment = { name, message , newDate: currentDateTime };
+        const newComment = { name, message, newDate: currentDateTime };
         setTimeout(() => {
-          setComment((prevComments) => [...prevComments, newComment]);
-        }, 3000)
-        
+            setComment((prevComments) => [...prevComments, newComment]);
+        }, 3000);
+
         localStorage.setItem("comments", JSON.stringify([...comment, newComment]));
 
         const templateParams = {
             from_name: name,
-            message: message,
-        }
+            message: message
+        };
 
-        emailjs.send("service_gh5aptr" , "template_xtxqoas" , templateParams , "rKjTy6HAL7XjjU1iF")
-        .then((response) => {
-            toast("Mensagem enviada com sucesso", {
-                type: "success",
-                autoClose: 2000,
-            });
-            console.log(response.status)
+        emailjs.send("service_gh5aptr", "template_xtxqoas", templateParams, "rKjTy6HAL7XjjU1iF")
+            .then((response) => {
+                toast("Mensagem enviada com sucesso", {
+                    type: "success",
+                    autoClose: 2000
+                });
+                console.log(response.status);
 
-            setName("")
-            setMessage("")
+                setName("");
+                setMessage("");
 
-            setTimeout(() => {
+                setTimeout(() => {
+                    setIsLoading(false);
+                }, 500);
+
+            }, (err) => {
+                console.log("ERROR", err);
                 setIsLoading(false);
-            }, 500);
-
-        }, (err) => {
-            console.log("ERROR", err)
-            setIsLoading(false)
-        })
+            });
     }
 
     function handleDelete(index: number) {
-      if(deleteComment === null){
-        setTimeout(() => {
-          const savedComments: string[] = JSON.parse(localStorage.getItem("comments")) || [] ;
-        
-          const updatedComments: string[] = [...savedComments];
-        
-          updatedComments.splice(index, 1);
-        
-          setComment(updatedComments);
-        
-          localStorage.setItem("comments", JSON.stringify(updatedComments));
-        } , 500)
+        if (deleteComment === null) {
+            setTimeout(() => {
+                const savedComments: string[] = JSON.parse(localStorage.getItem("comments")) || [];
 
-        toast("deletada com sucesso", {
-          type: "success",
-          autoClose: 1000,
-      });
-      
-        setDeleteComment(null);
-      }
+                const updatedComments: string[] = [...savedComments];
+
+                updatedComments.splice(index, 1);
+
+                setComment(updatedComments);
+
+                localStorage.setItem("comments", JSON.stringify(updatedComments));
+            }, 500);
+
+            toast("Deletada com sucesso", {
+                type: "success",
+                autoClose: 1000
+            });
+
+            setDeleteComment(null);
+        }
     }
-    
 
     return (
         <>
