@@ -65,21 +65,22 @@ export default function Start() {
               lg:w-[40rem] lg:h-[40rem] 
               md:w-[30rem] md:h-[30rem] 
               sm:w-[24rem] sm:h-[24rem]
+
               ${
                 diminuir && window.innerWidth <= 660
-                  ? "w-[10rem] h-[10rem]"
+                  ? "w-[1rem] h-[1rem]"
                   : ""
               }
               absolute top-[32rem] sm:top-[22rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2
               rounded-full border border-dashed border-zinc-400`}
           >
             <div
-              className="marte absolute bottom-30 w-10 h-10 sm:w-[6.5rem] sm:h-[6.5rem] left-1/2 transform -translate-x-1/2 rounded-full border border-dashed border-zinc-400"
+              className="marte absolute bottom-30 w-1 h-1 md:w-[6.5rem] md:h-[6.5rem] sm:w-[5.5rem] sm:h-[5.5rem] left-1/2 transform -translate-x-1/2 rounded-full border border-dashed border-zinc-400"
             >
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <DropdownMenuContent className=" flex items-center justify-center w-100 ">
-                    <img className="w-24" src={Mars} alt="" />
+                    <img className=" z-50" src={Mars} alt="" />
                     <ul>
                       <li className="text-sm">
                         O planeta Marte é o quarto<br /> mais próximo do Sol
@@ -93,10 +94,12 @@ export default function Start() {
                   <img
                     className={`
                   w-6 z-40 absolute 
-                  bottom-2 
+                  bottom-4 
                   left-1/2 
-                  sm:w-[3rem] 
-                  sm:h-[3rem] 
+                  sm:w-[2rem] 
+                  sm:h-[2rem] 
+                  md:w-[3rem] 
+                  md:h-[3rem]
                   sm:bottom-6
                   transform -translate-x-1/2`}
                     src={Sun}
@@ -115,11 +118,11 @@ export default function Start() {
                 h-24
                 md:w-36 
                 sm:w-36 
-                lg:w-44 
-                lg:h-44 
+                lg:w-56 
+                lg:h-56 
                 md:h-36 
                 sm:h-36 
-                lg:top-64 
+                lg:top-60 
                 md:top-72 
                 sm:top-72 
                 z-40 absolute
@@ -127,8 +130,8 @@ export default function Start() {
                 src={Sun}
                 alt=""
               />
-              <DropdownMenuContent className=" flex items-center justify-center w-100 ">
-                <img className="w-20 mb-96 sm:mb-10"  src={SunR} alt="Sol" />
+              <DropdownMenuContent className=" flex items-center justify-center">
+                <img className="w-20 z-50"  src={SunR} alt="Sol" />
                 <ul>
                   <li className="text-sm">
                     O Sol é a estrela do <br /> sistema solar tem um <br /> diâmetro de 1,392 mi de km
@@ -145,16 +148,18 @@ export default function Start() {
               h-56 
               lg:w-96 
               lg:h-96 
+              md:w-72
+              md:h-72
               sm:w-64 
               sm:h-64 
               sm:top-[22rem]
-            left-1/2 transform -translate-x-1/2 rounded-full border border-dashed border-zinc-400"
+              left-1/2 transform -translate-x-1/2 rounded-full border border-dashed border-zinc-400"
           >
             <div
               className="circle absolute 
                 bottom-30 
-                w-16 
-                h-16 
+                w-20 
+                h-20 
                 lg:w-28 
                 lg:h-28 
                 left-1/2 transform -translate-x-1/2 rounded-full border border-dashed border-zinc-400"
@@ -162,7 +167,7 @@ export default function Start() {
               <DropdownMenu>
                 <DropdownMenuTrigger>
                   <DropdownMenuContent className=" flex items-center justify-center w-100 ">
-                    <img className="w-20" src={Earth} alt="" />
+                    <img className="w-20  z-50" src={Earth} alt="" />
                     <ul>
                       <li className="text-sm">
                         Planeta Terra é conhecido <br /> como Planeta Azul
@@ -176,7 +181,12 @@ export default function Start() {
                     className="
                   w-10
                   lg:w-16 
-                  z-40 absolute bottom-2 left-1/2 transform -translate-x-1/2"
+                  z-40 absolute 
+                  bottom-5
+                  sm:bottom-5
+                  md:bottom-5
+                  lg:bottom-6
+                  left-1/2 transform -translate-x-1/2"
                     src={blackEarth}
                     alt="Terra"
                   />
@@ -191,14 +201,15 @@ export default function Start() {
                       </li>
                       <li className="text-sm">Está a 384.400 km do planeta.</li>
                     </ul>
-                    <img className="w-16" src={Moon} alt="" />
+                    <img className="w-16  z-50" src={Moon} alt="" />
                   </DropdownMenuContent>
                   <img
                     className="
                   w-4 
                   lg:w-8 
-                  bottom-12
-                  sm:bottom-14
+                  bottom-[4.5rem]
+                  lg:bottom-24
+                  sm:bottom-[4.5rem]
                   z-40 absolute  left-1/2 transform -translate-x-1/2"
                     src={blackMoon}
                     alt=""
