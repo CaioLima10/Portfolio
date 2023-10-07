@@ -81,9 +81,6 @@ export default function Power() {
     closeModal();
   };
 
-{/*  const getTranslatedAttributeName = (attribute: string) => {
-    return t(`${attribute}`);
-  };)*/}
 
   return (
     <div className="w-full mb-16 flex flex-col items-center  ">
@@ -175,19 +172,6 @@ export default function Power() {
                           ""}
               alt={t(selectedPower)}
             />
-             {/* {selectedPower && (
-                <>
-                  <h3>{t("Atributos")}:</h3>
-                  <div>
-                    {(professionProgress[selectedPower].attributes[i18n.language] as string[]).map((attribute: string, index: number) => (
-                      <Label key={index}>
-                        {getTranslatedAttributeName(attribute)}: <Progress className="w-80 flex items-center justify-center" value={professionProgress[selectedPower].progress[index]} />
-                      </Label>
-                    ))}
-                  </div>
-                </>
-                    )}*/}
-
           </div>
         )}
     </div>
