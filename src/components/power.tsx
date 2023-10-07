@@ -179,7 +179,7 @@ export default function Power() {
               <>
                 <h3>{t("Atributos")}:</h3>
                 <div>
-                    {professionProgress[selectedPower].attributes[i18n.language].map((attribute: string, index: string) => (
+                    {professionProgress.attributes[i18n.language].map((attribute: string, index: string) => (
                       <Label key={index}>
                         {getTranslatedAttributeName(attribute)}: <Progress className="w-80 flex items-center justify-center" value={professionProgress[selectedPower].progress[index]} />
                       </Label>
