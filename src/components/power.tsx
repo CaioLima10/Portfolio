@@ -15,7 +15,7 @@ export default function Power() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPower, setSelectedPower] = useState<string | null>(null);
 
-  const { t , i18n } = useTranslation();
+  const { t  } = useTranslation();
 
   const professionProgress = {
     Doctor: {
@@ -81,9 +81,9 @@ export default function Power() {
     closeModal();
   };
 
-  const getTranslatedAttributeName = (attribute: string) => {
+{/*  const getTranslatedAttributeName = (attribute: string) => {
     return t(`${attribute}`);
-  };
+  };)*/}
 
   return (
     <div className="w-full mb-16 flex flex-col items-center  ">
@@ -175,18 +175,19 @@ export default function Power() {
                           ""}
               alt={t(selectedPower)}
             />
-            {selectedPower && (
-              <>
-                <h3>{t("Atributos")}:</h3>
-                <div>
-                    {professionProgress.attributes[i18n.language].map((attribute: string, index: string) => (
+             {/* {selectedPower && (
+                <>
+                  <h3>{t("Atributos")}:</h3>
+                  <div>
+                    {(professionProgress[selectedPower].attributes[i18n.language] as string[]).map((attribute: string, index: number) => (
                       <Label key={index}>
                         {getTranslatedAttributeName(attribute)}: <Progress className="w-80 flex items-center justify-center" value={professionProgress[selectedPower].progress[index]} />
                       </Label>
                     ))}
-                </div>
-              </>
-            )}
+                  </div>
+                </>
+                    )}*/}
+
           </div>
         )}
     </div>
