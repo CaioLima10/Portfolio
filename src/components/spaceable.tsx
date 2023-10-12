@@ -1,45 +1,45 @@
-import {  useEffect, useState } from "react";
-import spaceableOne from "../assets/nave-zinc-branco.png"
-import spaceableDuo from "../assets/nave-cinza.png"
-import spaceableThree from "../assets/nave-amarela-e-azul (1).png"
-import spaceableFour from "../assets/nave-laranja-com-branca (1).png"
-import spaceableFive from "../assets/nave-escura-dourada (1).png"
-import spaceableSix from "../assets/nave-escura-asa (1).png"
+  import {  useEffect, useState } from "react";
+  import spaceableOne from "../assets/nave-zinc-branco.png"
+  import spaceableDuo from "../assets/nave-cinza.png"
+  import spaceableThree from "../assets/nave-amarela-e-azul (1).png"
+  import spaceableFour from "../assets/nave-laranja-com-branca (1).png"
+  import spaceableFive from "../assets/nave-escura-dourada (1).png"
+  import spaceableSix from "../assets/nave-escura-asa (1).png"
 
-import Aos from "../hooks/aosConfig"
+  import Aos from "../hooks/aosConfig"
 
-import { Button } from "./ui/button";
-import { XSquare } from "lucide-react";
-import { Separator } from "../components/ui/separator"
-import { useTranslation } from "react-i18next";
+  import { Button } from "./ui/button";
+  import { XSquare } from "lucide-react";
+  import { Separator } from "../components/ui/separator"
+  import { useTranslation } from "react-i18next";
 
 export default function Spaceable() {
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-    const [ selectSpaceable , setSelectSpaceable  ] = useState("")
-    const [ naveSkills , setNaveSkills ] = useState("")
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [ selectSpaceable , setSelectSpaceable  ] = useState("")
+  const [ naveSkills , setNaveSkills ] = useState("")
 
-    const { t } = useTranslation()
+  const { t } = useTranslation()
 
-    const openModal = () => {
-        setIsModalOpen(true);
-      };
-    
-      const closeModal = () => {
+  const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+
+    function handleSelectedImg(spaceable: string){
+        setSelectSpaceable(spaceable) 
+        setNaveSkills(spaceable)  
         setIsModalOpen(false);
-      };
+    }
 
-      function handleSelectedImg(spaceable: string){
-            setSelectSpaceable(spaceable) 
-            setNaveSkills(spaceable)  
-            setIsModalOpen(false);
-      }
-
-      useEffect(() => {
-        Aos.refresh();
-      }, []);
+    useEffect(() => {
+      Aos.refresh();
+    }, []);
 
   return (
-    <div className="w-full flex flex-col items-center ">
+    <div className="w-80 flex flex-col items-center ">
             <Button
                 onClick={openModal}
                 className={`px-4 py-2 w-full rounded-md relative bg-secondary text-white overflow-hidden group`}
@@ -48,7 +48,12 @@ export default function Spaceable() {
                 <span className="relative z-10">
                     {t("choose-your-spaceship")}
                 </span>
-                <div className="absolute inset-0 bg-background transform translate-y-full origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100 group-hover:translate-y-0"></div>
+                <div 
+                    className={`absolute inset-0 bg-background transform translate-y-full 
+                    origin-top left-0 transition-transform duration-300 opacity-0 group-hover:opacity-100
+                    group-hover:translate-y-0`}
+                    >
+                </div>
             </Button>
 
             { !selectSpaceable ? (
@@ -61,7 +66,7 @@ export default function Spaceable() {
                 <img src={selectSpaceable} alt="" />
             )}
         {isModalOpen && (
-        <div  onClick={closeModal} className="fixed bg-[#09090bcc] inset-0 flex items-center justify-center z-50 ">
+        <div onClick={closeModal} className="fixed bg-[#09090bcc] inset-0 flex items-center justify-center z-50 ">
                 <div 
                     className={` xl:w-1/1 h-3/2 bg-zinc-100  border-2 border-zinc-900  shadow-lg relative z-50`}
                     onClick={(e) => e.stopPropagation()}>
@@ -185,7 +190,6 @@ export default function Spaceable() {
             </div>
         </div>
         )}
-
     </div>
   )
 }
