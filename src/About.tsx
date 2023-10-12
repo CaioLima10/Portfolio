@@ -34,7 +34,7 @@ export default function About() {
         </div>
         <div  className="flex md:flex-col items-center justify-center  relative mt-56 md:mt-56 lg:mt-64 bg-gradient-to-r from-black via-gray-900 to-black md:max-xl:flex:flex-col" id="about">
           <div id="flex-row-responsive"className=" flex custom:flex-col  w-full max-w-screen-xl">
-                  <h1 className=" md:left-0 md:absolute bottom-[23.2rem] flex items-center justify-center text-5xl text-center w-full h-full p-4">{t("exploration-about-me")}</h1>
+              <h1 className=" md:left-0 md:absolute bottom-[23.2rem] flex items-center justify-center text-5xl text-center w-full h-full p-4">{t("exploration-about-me")}</h1>
           <div  className="flex flex-col items-center justify-center">
             <div className="flex w-80 mb-8 max-w-screen-xl">
             <div className="flex flex-col items-center">
