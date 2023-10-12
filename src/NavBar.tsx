@@ -1,25 +1,27 @@
-import Form from "./hooks/form";
-import { Button } from "./components/ui/button";
-import { Menubar } from "./components/ui/menubar";
-import LanguageSwitcher from "./components/languageSwitcher";
-import { useTranslation } from "react-i18next";
-import { Link as ScrollLink } from "react-scroll";
-import { useEffect, useState } from "react";
+  import Form from "./hooks/form";
+  import { Button } from "./components/ui/button";
+  import { Menubar } from "./components/ui/menubar";
+  import LanguageSwitcher from "./components/languageSwitcher";
+  import { useTranslation } from "react-i18next";
+  import { Link as ScrollLink } from "react-scroll";
+  import { useEffect, useState } from "react";
 
-import Curriculum from "./assets/curriculo-caio.pdf"
-import {  DropdownMenuItem } from "./components/ui/dropdown-menu";
-import { AlignJustify, Download, ScrollText } from "lucide-react";
+  import Curriculum from "./assets/curriculo-caio.pdf"
+  import {  DropdownMenuItem } from "./components/ui/dropdown-menu";
+  import { AlignJustify, Download, ScrollText } from "lucide-react";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "./components/ui/dropdown-menu";
+  import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuTrigger,
+  } from "./components/ui/dropdown-menu";
 
 export default function NavBar() {
   const [_isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isMobileView, setIsMobileView] = useState(window.innerWidth >= 1130);
+
+  const { t } = useTranslation();
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -35,7 +37,6 @@ export default function NavBar() {
     setIsClicked(true);
   };
 
-  const { t } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
