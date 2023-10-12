@@ -1,12 +1,13 @@
 import { Tabs, TabsList, TabsTrigger } from './components/ui/tabs'
-import FirstProject from './projects/fisrtProject'
-import SecondProject from './projects/secondProject'
-import ThirdProject from './projects/thirdProject'
+
 import {RxDoubleArrowDown} from "react-icons/rx"
 import Aos from "./hooks/aosConfig"
 import { useEffect } from 'react'
-import PlusProjects from './projects/plusProjects'
 import { useTranslation } from 'react-i18next'
+import FirstProject from './components/Projects/fisrtProject'
+import SecondProject from './components/Projects/secondProject'
+import ThirdProject from './components/Projects/thirdProject'
+import PlusProjects from './components/Projects/plusProjects'
 
 export default function Project() {
 
@@ -35,10 +36,10 @@ export default function Project() {
               <TabsTrigger value="thirdProject">{t("title-project")} 3</TabsTrigger>
               <TabsTrigger value="plusProjects">+ {t("title-project")}</TabsTrigger>
             </TabsList>
-            <FirstProject  value="firstProject"/>
-            <SecondProject value="secondProject"/>
-            <ThirdProject value="thirdProject" />
-            <PlusProjects value="plusProjects"/>
+              <FirstProject  value="firstProject"/>
+              <SecondProject value="secondProject"/>
+              <ThirdProject value="thirdProject" />
+              <PlusProjects value="plusProjects"/>
           </Tabs>
         </div>
       </div>
