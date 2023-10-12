@@ -5,6 +5,12 @@
             "teal":"Sarcelle",
             "gray":"Gris",
             "System": "Système",
+            "sun":"Soleil",
+            "info-sun":"Le Soleil est l'étoile du système solaire. Tous les corps célestes de ce système, y compris la Terre Le Soleil est l'étoile du système solaire Il a un diamètre de 1 392 milles km.",
+            "earth": "terre",
+            "info-earth": "La Terre s'est formée il y a environ 4,5 milliards d'années. est situé au milieu de la Voie Lactée, étant la troisième planète la plus proche du Soleil, distance 149 600 000.",
+            "mars":"mars",
+            "info-mars": "La planète Mars est la quatrième plus proche du Soleil Mars a deux lunes appelées Phobos et Deimos distance du soleil 227 940 000",
             "welcome": "Bienvenue sur mon portfolio!",
             "presentation": "Bonjour, je m'appelle",
             "about": "J'ai une passion pour le domaine de la programmation et je suis déterminé à conquérir mon espace. N'hésitez pas à explorer mon portfolio planétaire et à découvrir mon travail.",
@@ -74,8 +80,19 @@
             "text-projects": "Ce projet permet aux utilisateurs de créer leurs propres phrases en anglais, passer par plusieurs validations, dont la détection de phrases identiques, phrases de moins de trois mots et possibilité de filtrer, page supprimer et même modifier des phrases. En outre, offre une option de pratique pour améliorer les compétences en anglais.",
             "hardware": "matériel",
             "code": "code de projet",
-            "see": "voir le projet",
+            "see": "regardez la vidéo du projet",
+            "see-the-project": "voir le projet",
             "text-project-sigma": "Les utilisateurs auront la possibilité de créer leur propre carte, de la personnaliser avec style, de passer par les validations et le numéro de carte sera généré automatiquement. Ils auront également la possibilité de bloquer ou de supprimer la carte. De plus, les utilisateurs pourront effectuer des virements via Pix et consulter leur relevé bancaire. Pour encourager l'épargne, nous avons mis en place « Poupa Herói », où les utilisateurs qui laissent leur argent en épargne verra les revenus générés en CDI dirigés vers les enfants et les adolescents. En récompense, les utilisateurs auront également la possibilité de gagner du cashback.",
-            "text-project-color": "C'est l'un des premiers défis que j'utilise JavaScript, mais il a un contenu spécial. Bien qu'il contienne encore quelques erreurs, Cette illustration du défi montre comment il évolue au fil du temps. Dans ce cas, autorisez l'utilisateur à chiffrer n'importe quel noyau, et Circle prendra en charge ce noyau. En cliquant sur la couleur souhaitée, Le cercle principal prend également la même couleur."
+            "text-project-color": "C'est l'un des premiers défis que j'utilise JavaScript, mais il a un contenu spécial. Bien qu'il contienne encore quelques erreurs, Cette illustration du défi montre comment il évolue au fil du temps. Dans ce cas, autorisez l'utilisateur à chiffrer n'importe quel noyau, et Circle prendra en charge ce noyau. En cliquant sur la couleur souhaitée, Le cercle principal prend également la même couleur.",
+        
+            "suggestion": "suggestion",
+
+            "contact": "contact",
+            "object":"objet",
+            "programmer": "être programmeur...",
+            "knowledge": "Connaissance",
+            "mentors": "mentors",
+            "madeby": "faite par"
+
         }
     }

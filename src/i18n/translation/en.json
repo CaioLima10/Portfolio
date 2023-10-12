@@ -5,6 +5,12 @@
         "teal":"Teal",
         "gray":"Gray",
         "system": "System",
+        "sun":"sun",
+        "info-sun":"The Sun is the star of the solar system. All celestial bodies in this system, including Earth The Sun is the star of the solar system It has a diameter of 1,392 mi km.",
+        "earth": "earth",
+        "info-earth":"The Earth was formed about 4.5 billion years ago, is located in the middle of the Milky Way, being the third closest planet to the Sun, distance 149,600,000.",
+        "mars":"mars",
+        "info-mars":"The planet Mars is the fourth closest to the Sun Mars has two moons called Phobos and Deimos distance from the sun 227,940,000",
         "welcome": "Welcome to my Portfolio!",
         "presentation": "Hello my name is",
         "about": "I have a passion for the area of ​​Programming and I am determined to conquer my space. Feel free to explore my planetary portfolio and discover my work.",
@@ -74,11 +80,19 @@
         "text-projects": "This project allows users to create their own English sentences, passing through several validations, including detection of identical phrases, sentences of less than three words and the ability to filter, page delete and even edit sentences. Furthermore, offers a practice option to improve English skills.",
         "hardware": "hardware",
         "code": "project code",
-        "see": "see project",
+        "see": "watch the project video",
+        "see-the-project": "see the project",
         "text-project-sigma": "Users will have the ability to create their own card, customize it with style, go through validations and the card number will be generated automatically. They will also have the option to block or delete the card. Additionally, users will be able to make transfers via Pix and view their bank statement. To encourage savings, we implemented 'Poupa Herói', where users who leave their money in savings will see the income generated in CDI directed to children and adolescents. As a reward, users will also have the chance to earn cashback.",
-        "text-project-color": "This is one of the first challenges I use JavaScript, but it has special content. Although it still contains some errors, This illustration of the challenge shows how it evolves over time. In this case, allow the user to encrypt any kernel, and Circle will support that kernel. By clicking on the desired color, The main circle also takes on the same color."
+        "text-project-color": "This is one of the first challenges I use JavaScript, but it has special content. Although it still contains some errors, This illustration of the challenge shows how it evolves over time. In this case, allow the user to encrypt any kernel, and Circle will support that kernel. By clicking on the desired color, The main circle also takes on the same color.",
 
+        "suggestion": "suggestion",
 
+        "contact":"contact",
+        "object":"object",
+        "programmer": "be a programmer...",
+        "knowledge":"knowledge",
+        "mentors": "mentors",
+        "madeby": "made by"
 
 
     }

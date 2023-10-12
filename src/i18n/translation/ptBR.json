@@ -5,6 +5,12 @@
         "teal":"Verde-azulado",
         "gray":"Cinza",
         "system": "Sistema",
+        "sun":"sol",
+        "info-sun":"O Sol é a estrela do sistema solar.  Todos os corpos celestes desse sistema, inclusive a Terra  O Sol é a estrela do sistema solar tem um diâmetro de 1,392 mi de km.",
+        "earth": "terra",
+        "info-earth":"A Terra foi formada há cerca de 4,5 bilhões de anos, está localizado no meio da Via Láctea, sendo o terceiro planeta mais próximo do Sol, distância 149.600.000.",
+        "mars":"marte",
+        "info-mars":"O planeta Marte é o quarto mais próximo do Sol Marte tem duas luas chamadas Fobos e Deimos distância do sol 227.940.000",
         "welcome": "Seja bem-vindo ao meu Portfólio!",
         "presentation": "olá, meu nome é",
         "about": "Tenho paixão pela área de Programação e estou determinado a conquistar meu espaço. Sinta-se à vontade de explorar meu portfólio planetário e conhecer meu trabalho.",
@@ -74,9 +80,19 @@
         "text-projects": "Este projeto permite aos usuários criar suas próprias frases em inglês, passando por diversas validações, incluindo detecção de frases idênticas, frases com menos de três palavras e a capacidade de filtrar, paginar exclua e até edite frases. Além disso, oferece uma opção prática para melhorar as habilidades de inglês.",
         "hardware": "ferramentas",
         "code": "código do projeto",
-        "see": "ver do projeto",
+        "see": "ver o video projeto",
+        "see-the-project": "veja o projeto",
         "text-project-sigma": "O usuário poderá criar seu próprio cartão, personalizá-lo com estilo, passar por validações e o número do cartão será gerado automaticamente. Eles também terão a opção de bloquear ou excluir o cartão. Além disso, os usuários poderão fazer transferências via Pix e visualizar seu extrato bancário. Para incentivar a poupança, implementámos o 'Poupa Herói', onde os utilizadores que deixam o seu dinheiro na poupança verá a renda gerada em CDI direcionada para crianças e adolescentes. Como recompensa, os usuários também terão a chance de ganhar cashback.",
-        "text-project-color": "Este é um dos primeiros desafios que utilizo JavaScript, mas tem um conteúdo especial. Embora ainda contenha alguns erros, Esta ilustração do desafio mostra como ele evolui ao longo do tempo. Nesse caso, permita que o usuário criptografe qualquer kernel e o Circle oferecerá suporte a esse kernel. Ao clicar na cor desejada, O círculo principal também assume a mesma cor."
+        "text-project-color": "Este é um dos primeiros desafios que utilizo JavaScript, mas tem um conteúdo especial. Embora ainda contenha alguns erros, Esta ilustração do desafio mostra como ele evolui ao longo do tempo. Nesse caso, permita que o usuário criptografe qualquer kernel e o Circle oferecerá suporte a esse kernel. Ao clicar na cor desejada, O círculo principal também assume a mesma cor.",
+    
+        "suggestion": "sugestão",
+
+        "contact":"contato",
+        "object":"objeto",
+        "programmer": "ser programador...",
+        "knowledge":"conhecimento",
+        "mentors": "mentores",
+        "madeby": "feito por"
     }
 
 }
