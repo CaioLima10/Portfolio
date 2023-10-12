@@ -8,10 +8,10 @@ import Footer from "./Footer";
 import BackToTop from "./util";
 import { useEffect, useState } from "react";
 import Project from "./Project";
-import Comment from "./Comment";
 
 import "react-toastify/dist/ReactToastify.css"
 import { ToastContainer } from "react-toastify";
+import Suggestion from "./Suggestion";
 
 export function App() {
 
@@ -45,7 +45,7 @@ export function App() {
           <About />
           <Skills />
           <Project />
-          <Comment/>
+          <Suggestion/>
           <Footer/>
           <ToastContainer/>
           <BackToTop/>
