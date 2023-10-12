@@ -68,3 +68,9 @@
     transform: translate(-50%, -50%) rotate(360deg)
   }
  }
+
+/* Estilize o toast usando a classe "toast-confirm" */
+.toast-confirm {
+  background-color: #333333 !important; 
+  color: #ffffff !important; 
+}
