@@ -60,7 +60,7 @@ export default function Astronauta() {
   return (
     <>
         <div className="mb-24  w-full flex flex-col items-center justify-center relative">
-          <img style={{ zIndex: "30" }}  className="absolute" src={ vitrinePersonagem } alt="" />
+          <img style={{ zIndex: "30" }}  className="absolute top-36" src={ vitrinePersonagem } alt="" />
           <div id="animate-shrinkHeight">
             <div id="border-animate-shrinkHeight"></div>
           </div>
@@ -90,10 +90,9 @@ export default function Astronauta() {
               
           {showAstronaut ? (
             <>
-            <RefreshCcw className="absolute top-48 " />
+            <RefreshCcw className="absolute top-64" />
             
-            <div className="w-60 items-center justify-center relative ">
-
+            <div className="w-60 items-center justify-center relative  mt-20">
               <img
                 src={astronautImages[currentImageIndex]}
                 alt="nave"
@@ -105,13 +104,13 @@ export default function Astronauta() {
             </>
             ) : (
               <>  
-            <RefreshCcw className="absolute top-40 " />
+            <RefreshCcw className="absolute top-64" />
               <img
                 onClick={handleNextImageDuo}
                 src={characterImages[currentImageIndex]}
                 alt="Personagem-Feminina"
                 style={currentImageIndex === 1 ? imageStyleForPersonagemFeminina1 : {}}
-                className="w-40 mt-36 mb-20 z-50"
+                className="w-40 mt-56 mb-20 z-50"
                 />
             </>
         )}
@@ -123,7 +122,9 @@ export default function Astronauta() {
         <Button className="h-16 w-28 bg-background border-2" onClick={handleClickFamely} >
           <img className="absolute w-24 h-24 bottom-0 " src={FemininaPerfil} alt="" />
         </Button>
-        <Button className="h-16 w-28 bg-background border-2" onClick={handleClickBtn}><img className="absolute w-24 h-20 bottom-0" src={masculinoPerfil} alt="" /></Button>
+        <Button className="h-16 w-28 bg-background border-2" onClick={handleClickBtn}>
+          <img className="absolute w-24 h-20 bottom-0" src={masculinoPerfil} alt="" />
+        </Button>
       </div>
     </div>
     </>
