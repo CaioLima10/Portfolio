@@ -9,11 +9,14 @@ import blackMoon from "./assets/moonBalck.png";
 import SunR from "./assets/sun-3d.png";
 import Earth from "./assets/terra-3d.png";
 import Mars from "./assets/marte.png";
-import Moon from "./assets/moon.png";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "./components/ui/dropdown-menu";
+import { Separator } from "./components/ui/separator";
+import { ScrollArea } from "./components/ui/scroll-area";
 
 export default function Start() {
   const [diminuir, setDiminuir] = useState(false);
+  
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,11 +42,10 @@ export default function Start() {
     Aos.refresh();
   }, []);
 
-  const { t } = useTranslation();
 
   return (
     <>
-      <span>+ informações clicar nos planetas.</span>
+      <span>+ informações clicar no sol.</span>
       <div
         data-aos="fade-up"
         id="start-mobile"
@@ -77,20 +79,6 @@ export default function Start() {
             <div
               className="marte absolute bottom-30 w-1 h-1 md:w-[6.5rem] md:h-[6.5rem] sm:w-[5.5rem] sm:h-[5.5rem] left-1/2 transform -translate-x-1/2 rounded-full border border-dashed border-zinc-400"
             >
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <DropdownMenuContent className=" flex items-center justify-center w-100 ">
-                    <img className=" z-50" src={Mars} alt="" />
-                    <ul>
-                      <li className="text-sm">
-                        O planeta Marte é o quarto<br /> mais próximo do Sol
-                      </li>
- 
-                      <li className="text-sm">
-                        marte tem duas luas <br />chamados Fobos e Deimos
-                      </li>
-                    </ul>
-                  </DropdownMenuContent>
                   <img
                     className={`
                   w-6 z-40 absolute 
@@ -105,8 +93,7 @@ export default function Start() {
                     src={Sun}
                     alt=""
                   />
-                </DropdownMenuTrigger>
-              </DropdownMenu>
+      
             </div>
           </div>
           <DropdownMenu>
@@ -129,16 +116,42 @@ export default function Start() {
                 left-1/2 transform -translate-x-1/2`}
                 src={Sun}
                 alt=""
-              />
-              <DropdownMenuContent className=" flex items-center justify-center">
-                <img className="w-20 z-50"  src={SunR} alt="Sol" />
-                <ul>
-                  <li className="text-sm">
-                    O Sol é a estrela do <br /> sistema solar tem um <br /> diâmetro de 1,392 mi de km
-                  </li>
-                   
-                </ul>
-              </DropdownMenuContent>
+                />
+
+                <ScrollArea  style={{ maxHeight: '100px', overflow: 'auto' }}> 
+                <DropdownMenuContent className="flex items-center justify-center">
+                  <ul className="flex flex-col md:flex-none items-center justify-center w-80 md:w-96">
+                    <li className="flex text-sm items-center p-2">
+                      <img className="w-20 z-50" src={SunR} alt="Sol" />
+                      <div>
+                      <span className="flex items-center justify-center text-black bg-yellow-400 w-full mb-2 ">{t("sun")}</span>
+                        <p>
+                          {t("info-sun")}
+                        </p>
+                      </div>
+                    </li>
+                    <Separator/>
+                    <li className="flex text-sm items-center p-2">
+                      <img className="w-20 z-50" src={Earth} alt="Terra" />
+                      <div>
+                      <span className="flex items-center justify-center text-black bg-blue-400 w-full mb-2 ">{t("earth")}</span>
+                        {t("info-earth")}
+                      </div>
+                    </li>
+                    <Separator/>
+                    
+                    <li className="flex text-sm items-center p-2">
+                      <img className="w-20 z-50" src={Mars} alt="Marte" />
+                      <div>
+                      <span className="flex items-center justify-center text-black bg-red-500 w-full mb-2 ">{t("mars")}</span>
+                        <p>
+                          {t("info-mars")}
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                </DropdownMenuContent>
+          </ScrollArea>
             </DropdownMenuTrigger>
           </DropdownMenu>
           <div
@@ -164,19 +177,7 @@ export default function Start() {
                 lg:h-28 
                 left-1/2 transform -translate-x-1/2 rounded-full border border-dashed border-zinc-400"
             >
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <DropdownMenuContent className=" flex items-center justify-center w-100 ">
-                    <img className="w-20  z-50" src={Earth} alt="" />
-                    <ul>
-                      <li className="text-sm">
-                        Planeta Terra é conhecido <br /> como Planeta Azul
-                      </li>
-                      <li className="text-sm">
-                        por ter 70% da sua <br /> superfície coberta de água.
-                      </li>
-                    </ul>
-                  </DropdownMenuContent>
+
                   <img
                     className="
                   w-10
@@ -190,19 +191,7 @@ export default function Start() {
                     src={blackEarth}
                     alt="Terra"
                   />
-                </DropdownMenuTrigger>
-              </DropdownMenu>
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <DropdownMenuContent className=" flex items-center justify-center sm:w-100 ">
-                    <ul>
-                      <li className="text-sm">
-                        A Lua é o único satélite <br /> natural da Terra.
-                      </li>
-                      <li className="text-sm">Está a 384.400 km do planeta.</li>
-                    </ul>
-                    <img className="w-16  z-50" src={Moon} alt="" />
-                  </DropdownMenuContent>
+ 
                   <img
                     className="
                   w-4 
@@ -214,8 +203,6 @@ export default function Start() {
                     src={blackMoon}
                     alt=""
                   />
-                </DropdownMenuTrigger>
-              </DropdownMenu>
             </div>
           </div>
         </div>
