@@ -1,7 +1,6 @@
 import "./About.css";
 import Aos from "./hooks/aosConfig";
 import { Separator } from "./components/ui/separator";
-import Astronauta from "./components/astronauta";
 import MyCity from "./assets/city.png";
 import { Dialog, DialogContent, DialogTrigger } from "./components/ui/dialog";
 import CityImageLink from "./components/cityImgLink";
@@ -12,6 +11,7 @@ import { Progress } from "./components/ui/progress";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { RxDoubleArrowDown } from "react-icons/rx";
+import Character from "./components/astronauta";
 
 export default function About() {
   const { t } = useTranslation();
@@ -80,7 +80,7 @@ export default function About() {
             </div>
           </div>
 
-          <Astronauta />
+          <Character />
 
           <div className="flex items-center justify-center">
             <div className="flex flex-col gap-2">

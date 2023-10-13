@@ -21,7 +21,7 @@ import { ChevronDown, Infinity, RefreshCcw } from "lucide-react";
 import { Separator } from "./ui/separator";
 import { useTranslation } from "react-i18next";
 
-export default function Astronauta() {
+export default function Character() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showAstronaut, setShowAstronaut] = useState(true);
  
@@ -60,7 +60,7 @@ export default function Astronauta() {
   return (
     <>
         <div className="mb-24  w-full flex flex-col items-center justify-center relative">
-          <img style={{ zIndex: "30" }}  className="absolute top-36" src={ vitrinePersonagem } alt="" />
+          <img style={{ zIndex: "30" }}  className="absolute  md:top-36" src={ vitrinePersonagem } alt="" />
           <div id="animate-shrinkHeight">
             <div id="border-animate-shrinkHeight"></div>
           </div>
@@ -73,7 +73,7 @@ export default function Astronauta() {
                 <small className="flex">{t("origin")}:</small>
                 { showAstronaut && (
                   <img className="w-14 flex items-center justify-center" src={ptBR} alt="" />
-                ) ||(
+                ) || (
                   <>
                     <img  className="w-12 flex items-center justify-center" src={OrigemCyberTron} alt="Cybertron" />
                     <span className="w-12 text-base text-zinc-500  flex items-center justify-center mt-2" >Cybertron</span>
@@ -82,7 +82,7 @@ export default function Astronauta() {
               </div>
             </div>
           </div>
-      <div className="cursor-pointer ">
+        <div className="cursor-pointer ">
           <div
             onClick={handleNextImage}
             className="w-full md:max-w-screen h-88 p-12 z-30 transform flex justify-center items-center rotate-0 border-0.3px border-white-28  shadow-10 hover:shadow-20 relative transition-all duration-300"
@@ -92,11 +92,14 @@ export default function Astronauta() {
             <>
             <RefreshCcw className="absolute top-64" />
             
-            <div className="w-60 items-center justify-center relative  mt-20">
+            <div className="w-40 md:w-20 mx-auto my-8 md:my-12">
               <img
                 src={astronautImages[currentImageIndex]}
                 alt="nave"
-                className={`flex items-center justify-center w-full md:max-w-screen  max-h-full mt-44 mb-20 shadow-2xl`}
+                style={{
+                  objectFit: "contain"
+                }}
+                className={` scale-125 flex cover absolute -bottom-[20.5rem] md:-bottom-[20rem] left-0 right-0 m-auto max-w-screen max-h-full shadow-2xl`}
                 id="img-astronaut"
               />
 
@@ -105,25 +108,31 @@ export default function Astronauta() {
             ) : (
               <>  
             <RefreshCcw className="absolute top-64" />
-              <img
+            <div className="w-40 md:w-20 mx-auto my-8 md:my-12">
+            <img
                 onClick={handleNextImageDuo}
                 src={characterImages[currentImageIndex]}
                 alt="Personagem-Feminina"
-                style={currentImageIndex === 1 ? imageStyleForPersonagemFeminina1 : {}}
-                className="w-40 mt-56 mb-20 z-50"
-                />
+                style={{
+                  ...imageStyleForPersonagemFeminina1,
+                  objectFit: "contain",
+                  transform: "scale(1.3)"
+                }}
+                className={` flex cover absolute -bottom-[20.5rem] md:-bottom-[20rem] left-0 right-0 m-auto max-w-screen max-h-full shadow-2xl`}
+              />  
+            </div>
             </>
         )}
         </div>
       </div>
         <ChevronDown />
-        <span className="mb-5">{t("character")}</span>
+        <span className="absolute bottom-20">{t("character")}</span>
       <div className="flex gap-2 relative">
-        <Button className="h-16 w-28 bg-background border-2" onClick={handleClickFamely} >
+        <Button className="mt-[32rem] h-16 w-28 bg-background border-2" onClick={handleClickFamely} >
           <img className="absolute w-24 h-24 bottom-0 " src={FemininaPerfil} alt="" />
         </Button>
-        <Button className="h-16 w-28 bg-background border-2" onClick={handleClickBtn}>
-          <img className="absolute w-24 h-20 bottom-0" src={masculinoPerfil} alt="" />
+        <Button className="mt-[32rem] h-16 w-28 bg-background border-2" onClick={handleClickBtn}>
+          <img className="absolute w-24 h-20 -bottom-0" src={masculinoPerfil} alt="" />
         </Button>
       </div>
     </div>

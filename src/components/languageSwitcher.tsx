@@ -4,7 +4,7 @@ import fr from "../assets/fr.png";
 import en from "../assets/en.webp";
 import ptBR from "../assets/prBR.webp";
 import { useEffect, useState } from "react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 
 const languageOptions = [
   {
@@ -55,35 +55,20 @@ export default function LanguageSwitcher() {
     <div className="flex">
       {isMobileLanguageView ? (
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Button className="bg-background p-2 md:p-4 w-16 md:w-24 h-[4.2rem] border rounded-md flex items-center justify-center text-center">
-              {selectedLanguage ? (
-                <img className="w-14" src={languageOptions.find((lang) => lang.value === selectedLanguage)?.flag} alt="" />
-              ) : (
-                "Select Language"
-              )}  
-            </Button>
+          <DropdownMenuTrigger className="bg-background p-2 md:p-4 w-16 md:w-24 h-[4.2rem] border rounded-md flex items-center justify-center text-center">
+            {selectedLanguage ? (
+              <img className="w-14" src={languageOptions.find((lang) => lang.value === selectedLanguage)?.flag} alt="" />
+            ) : (
+              "Select Language"
+            )}
           </DropdownMenuTrigger>
-
-          <DropdownMenuContent
-            className={`flex flex-col items-center justify-center mt-12 md:mt-0 gap-1 md:gap-2 w-12 h-90 fixed  transform -translate-y-72 -translate-x-24`}
-          >
+          <DropdownMenuContent className="flex flex-col items-center justify-center mt-12 md:mt-0 gap-1 md:gap-2 w-12 h-90 fixed transform -translate-y-80 -translate-x-20">
             {languageOptions.map((languageOption) => (
-              <div
-                key={languageOption.value}
-                className="bg-background p-0 md:p-2 border rounded-md flex items-center justify-center text-center"
-              >
+              <div key={languageOption.value} className="bg-background p-0 md:p-2 border rounded-md flex items-center justify-center text-center">
                 <div className="flex flex-col items-center">
-                  <Button
-                    className={`bg-background m-1 p-2 ${
-                      selectedLanguage === languageOption.value ? "opacity-1" : "opacity-50"
-                    }`}
-                    onClick={() => {
-                      selectOption(languageOption.value);
-                    }}
-                  >
+                  <DropdownMenuItem className={`bg-background m-1 p-2 ${selectedLanguage === languageOption.value ? "opacity-1" : "opacity-50"}`} onClick={() => selectOption(languageOption.value)}>
                     <img className="w-10" src={languageOption.flag} alt={languageOption.name} />
-                  </Button>
+                  </DropdownMenuItem>
                 </div>
               </div>
             ))}
