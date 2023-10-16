@@ -4,14 +4,14 @@ import { Separator } from "./components/ui/separator";
 import MyCity from "./assets/city.png";
 import { Dialog, DialogContent, DialogTrigger } from "./components/ui/dialog";
 import CityImageLink from "./components/cityImgLink";
-import Power from "./components/power";
 import Spaceable from "./components/spaceable";
 import { Button } from "./components/ui/button";
 import { Progress } from "./components/ui/progress";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { RxDoubleArrowDown } from "react-icons/rx";
-import Character from "./components/astronauta";
+import Character from "./components/character";
+import Profession from "./components/profession";
 
 export default function About() {
   const { t } = useTranslation();
@@ -86,7 +86,7 @@ export default function About() {
             <div className="flex flex-col gap-2">
               <small >{t("dream-career")}</small>
               <Separator className="w-full mb-2" />
-              <Power />
+              <Profession />
             </div>
           </div>
         </div>
