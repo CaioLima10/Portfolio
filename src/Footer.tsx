@@ -25,7 +25,7 @@ export default function Footer() {
           <div >
           <div className="w-full flex flex-col items-center justify-center gap-2">
             <p className="flex justify-between text-sm mb-2">
-              <a target="_blank" href="tel:+5511989356304">
+              <a target="_blank" href="https://wa.me/5511989356304?text=Queria%20saber%20como%20faço%20pra%20contratar%20seu%20trabalho">
                 <Button className="h-8 w-32 flex items-center justify-start gap-1">
                   <BsWhatsapp className="text-2xl" />
                   WhatsApp
