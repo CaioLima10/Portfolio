@@ -28,7 +28,7 @@ export default function CardTypescript() {
             <h2 className="text-2xl w-20 flex items-center justify-center">Typescript</h2>
             <div className="p-8 w-full">
             <span>{t("typescript")}</span>
-            <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-blue-600">10 {t("month")}</span> </h3>
+            <h3 className="flex items-end justify-end text-xl">{t("period")}:<span className="text-blue-600">10 {t("months")}</span> </h3>
             </div>
         </div>
         <label className="border-4 border-blue-600 w-full h-0  absolute bottom-0 left-0"></label>
