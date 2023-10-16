@@ -45,7 +45,7 @@ export default function Start() {
 
   return (
     <>
-      <span>+ informações clicar no sol.</span>
+      <span>{t("plus-info")}</span>
       <div
         data-aos="fade-up"
         id="start-mobile"
